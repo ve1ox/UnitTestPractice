@@ -35,23 +35,7 @@ TEST(PracticeTest, is_palindrome)
 	ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest, is_in_order_one)
-{
-	Practice obj;
-	int fi, se, th;
-	bool temp = false;
-	fi = 3;
-	se = 1;
-	th = 2;
-	obj.sortDescending(fi, se, th);
-	
-	if(fi > se && se > th)
-		temp = true;
-	
-	ASSERT_TRUE(temp);
-}
-
-TEST(PracticeTest, is_in_order_two)
+TEST(PracticeTest, is_in_order)
 {
 	Practice obj;
 	int fi, se, th;
