@@ -32,18 +32,37 @@ TEST(PracticeTest, is_palindrome)
 {
 	Practice obj;
 	bool actual = obj.isPalindrome("mayamoodybabydoomayam");
-	ASSERT_FALSE(actual);
+	ASSERT_TRUE(actual);
 }
 
 TEST(PracticeTest, is_in_order)
 {
 	Practice obj;
 	int fi, se, th;
+	bool temp = false;
+	fi = 3;
+	se = 1;
+	th = 2;
+	obj.sortDescending(fi, se, th);
+	
+	if(fi > se && se > th)
+		temp = true;
+	
+	ASSERT_TRUE(temp);
+}
+
+TEST(PracticeTest, isnt_in_order)
+{
+	Practice obj;
+	int fi, se, th;
+	bool temp = false;
 	fi = 5;
 	se = -64;
 	th = 144;
 	obj.sortDescending(fi, se, th);
 	
-	ASSERT_GT(fi, se);
-	ASSERT_GT(se, th);
+	if(fi > se && se > th)
+		temp = true;
+	
+	ASSERT_FALSE(temp);
 }
