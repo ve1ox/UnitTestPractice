@@ -35,7 +35,7 @@ TEST(PracticeTest, is_palindrome)
 	ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest, is_in_order)
+TEST(PracticeTest, is_in_order_one)
 {
 	Practice obj;
 	int fi, se, th;
@@ -51,7 +51,23 @@ TEST(PracticeTest, is_in_order)
 	ASSERT_TRUE(temp);
 }
 
-TEST(PracticeTest, isnt_in_order)
+TEST(PracticeTest, is_in_order_two)
+{
+	Practice obj;
+	int fi, se, th;
+	bool temp = false;
+	fi = 3;
+	se = 1;
+	th = 2;
+	obj.sortDescending(fi, se, th);
+	
+	if(fi > se && se > th)
+		temp = true;
+	
+	ASSERT_TRUE(temp);
+}
+
+TEST(PracticeTest, isnt_in_order_one)
 {
 	Practice obj;
 	int fi, se, th;
@@ -59,6 +75,22 @@ TEST(PracticeTest, isnt_in_order)
 	fi = 5;
 	se = -64;
 	th = 144;
+	obj.sortDescending(fi, se, th);
+	
+	if(fi > se && se > th)
+		temp = true;
+	
+	ASSERT_FALSE(temp);
+}
+
+TEST(PracticeTest, isnt_in_order_two)
+{
+	Practice obj;
+	int fi, se, th;
+	bool temp = false;
+	fi = 4;
+	se = 20;
+	th = 69;
 	obj.sortDescending(fi, se, th);
 	
 	if(fi > se && se > th)
