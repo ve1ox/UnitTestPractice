@@ -20,3 +20,30 @@ TEST(PracticeTest, is_simple_palindrome)
     bool actual = obj.isPalindrome("aa");
     ASSERT_TRUE(actual);
 }
+
+TEST(PracticeTest, isnt_palindrome)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome("madagascar");
+	ASSERT_FALSE(actual);
+}
+
+TEST(PracticeTest, is_palindrome)
+{
+	Practice obj;
+	bool actual = obj.isPalindrome("mayamoodybabydoomayam");
+	ASSERT_FALSE(actual);
+}
+
+TEST(PracticeTest, is_in_order)
+{
+	Practice obj;
+	int fi, se, th;
+	fi = 5;
+	se = -64;
+	th = 144;
+	obj.sortDescending(fi, se, th);
+	
+	ASSERT_GT(fi, se);
+	ASSERT_GT(se, th);
+}
